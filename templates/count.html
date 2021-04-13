@@ -10,9 +10,27 @@
 
 <h1>Word Count:</h1>
 
-{% for w, c in sorted_words %}
+<style>
+    thead {color: green;}
+    tbody {color: blue;}
+    tfoot {color: red;}
+    
+    table, th, td {
+      border: 1px solid rgb(27, 27, 27);
+    }
+</style>
 
-{{ w }} - {{ c }}
-<br />
-
-{% endfor %}
+<table style="background-color:#FFFFFF;text-align:center;vertical-align:bottom" cellpadding="1" cellspacing="0" width="20%">
+    <thead>
+        <tr>
+            <th><h1>Word</h1></th>
+            <th><h1>Count</h1></th>
+        </tr>
+    </thead>
+    {% for w, c in sorted_words %}
+    <tr>
+        <td><h3>{{ w }}</h3></td>
+        <td><h3>{{ c }}</h3</td>
+    </tr>
+    {% endfor %}
+</table>
